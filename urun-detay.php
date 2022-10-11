@@ -116,6 +116,7 @@ if ($say==0) {
 						
 						<li class="active"><a href="#desc" data-toggle="tab">Açıklama</a></li>
 						<li class=""><a href="#rev" data-toggle="tab">Yorumlar (0)</a></li>
+						<li class=""><a href="#video" data-toggle="tab">Ürün Video</a></li>
 					</ul>
 					<div id="myTabContent" class="tab-content shop-tab-ct">
 						<div class="tab-pane fade active in" id="desc">
@@ -136,7 +137,7 @@ if ($say==0) {
 
 							<h4>Yorum Yazın</h4>
 
-							<?php if (isset($_SESSION['userkullanicimail'])) {?>
+							<?php if (isset($_SESSION['userkullanici_mail'])) {?>
 							
 
 							<form role="form">
@@ -145,14 +146,34 @@ if ($say==0) {
 								<textarea class="form-control" placeholder="Lütfen yorumunuzu buraya yazınız..." id="text"></textarea>
 							</div>
 							
-							<button type="submit" class="btn btn-default btn-red btn-sm">Submit</button>
+							<button type="submit" class="btn btn-default btn-red btn-sm">Yorum Ekle</button>
 						</form>
 
 						<?php } else {?>
-									 Yorum yazabilmek için <a style="color:red" href="register.php">kayıt</a> olmalısınız üyemiz iseniz giriş yapmalısınız...
+									 Yorum yazabilmek için <a style="color:red" href="register.php">kayıt</a> olmalısınız üyemiz iseniz <a style="color:red" href="">giriş</a> yapmalısınız...
 							<?php	} ?>
 							
 						</div>
+
+						<div class="tab-pane fade " id="video">
+							<p>
+									<?php 
+
+									$say=strlen($uruncek['urun_video']);
+
+									if ($say>0) {?>
+									
+
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $uruncek['urun_video']; ?>" 
+                  frameborder="0" allowfullscreen></iframe>
+									<?php } else { 
+										echo "Bu ürüne video eklenmemiştir";
+									}
+									?>
+							</p>
+							
+						</div>
+
 					</div>
 				</div>
 				

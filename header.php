@@ -27,7 +27,7 @@ $kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC);
 <html lang="en">
   <head>
 
-	<base href="http://localhost/eticaret/">
+	<base href="http://localhost/e-ticaret/">
 
 
     <meta charset="utf-8">
